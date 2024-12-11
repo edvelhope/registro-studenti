@@ -14,6 +14,8 @@ public class Studente {
 		this.cognome = cognome;
 		this.matricola = matricola;
 	}
+	
+	// Metodo che restituisce matricola usato in controlloMatricola
 
 	public String getMatricola() {
 		return matricola;

@@ -27,6 +27,7 @@ public class Main {
 	// Creazione dell'ArrayList degli studenti e apertura scanner
 
 	public static ArrayList<Studente> studenti = new ArrayList<Studente>();
+	
 	static Scanner s = new Scanner(System.in);
 
 	// Metodo per aggiungere un nuovo studente
@@ -72,7 +73,7 @@ public class Main {
 
 		for (Studente studente : studenti) {
 			if (studente.getMatricola().equals(matricola)) {
-				System.out.println("Studente presente");
+				System.out.println("Questo studente è presente. " + studente.toString());
 				return;
 			}
 		}
@@ -97,30 +98,29 @@ public class Main {
 		boolean esci = false;
 
 		while (!esci) {
-			System.out.print("REGISTRO STUDENTI\n");
+			System.out.print("\nREGISTRO STUDENTI\n");
 			System.out.println(
 					"1.Aggiungi Studente\n2.Visualizza tutti gli studenti\n3.Cerca studente per matricola\n4.Esci");
-			System.out.print("Inserisci un' azione valida: ");
+			System.out.print("Inserisci un'azione valida: ");
 
-			int scelta = s.nextInt();
-			s.nextLine();
+			String scelta = s.nextLine();
 
 			switch (scelta) {
-			case 1:
+			case "1":
 				aggiungiStudente();
 				break;
-			case 2:
+			case "2":
 				elencoStudenti();
 				break;
-			case 3:
+			case "3":
 				cercaMatricola();
 				break;
-			case 4:
+			case "4":
 				esci = true;
-				System.out.println("Sei uscito dal programma");
+				System.out.println("Sei uscito dal programma.");
 				break;
 			default:
-				System.out.println("Opzione non valida");
+				System.out.println("Opzione non valida. Inserisci un input valido (1-4)");
 			}
 		}
 
